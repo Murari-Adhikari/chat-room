@@ -3,23 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Room</title>
+    <title>Chat</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="chat-container">
       <h1>Chat Room</h1>
       <div id="chat-messages"></div>
+
       <input
         type="text"
         id="message-input"
+        name="messageInput"
         placeholder="Type your message..."
       />
-      <input type="date" name="expiratiion" />
+      <input type="date" id="date" name="expiration" />
       <button onclick="sendMessage()">Send</button>
     </div>
 
     <script src="chat.js"></script>
   </body>
 </html>
-<p><strong>2023-12-15 13:48:09:</strong><u> hi</u></p><p><strong>2023-12-15 13:48:29:</strong><u> hello</u></p>

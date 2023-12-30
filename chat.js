@@ -1,22 +1,33 @@
-function sendMessage() {
-    const messageInput = document.getElementById('message-input');
-    const message = messageInput.value;
 
-    // Create a FormData object and append the message
+let userId  = prompt("user id please");
+function sendMessage(){
+    const messageInput = document.getElementById('message-input');
+    const message =messageInput.value;
+
+    if(message.trim()=== ' '){
+        console.log("please enter the message");
+        return;
+    }
     const formData = new FormData();
     formData.append('message', message);
+    formData.append('userId', userId);
 
-    // Send the message to the PHP script using a POST request
-    fetch('chatroom.php', {
-        method: 'POST',
-        body: formData,
+    fetch('http://localhost/day_35/chatroom/chatroom.php' , {
+        method:'POST',
+        body:formData
     })
+
     .then(response => response.json())
-    .then(data => {
-        console.log(data.message); // Log a success message
-    })
-    .catch(error => console.error('Error:', error));
+    .then(data =>{
+        console.log(data.message);
+        const chatmessage= document.getElementById('chat-messages');
+        const messageElement = document.createElement('p');
+    
 
-    // Clear the input field after sending the message
-    messageInput.value = '';
+        messageElement.innerHTML = `${data.date} &nbsp  &nbsp${userId} &nbsp  &nbsp${data.message}`;
+        chatmessage.appendChild(messageElement)
+    })
+.catch(error => console.error('error',error));
+
+messageInput.value = '';
 }

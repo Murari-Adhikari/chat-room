@@ -1,17 +1,17 @@
-/* Default styles for larger screens */
+
 body {
-    background-color: #f0f8ff; /* Light Blue */
+    background-color: #f0f8ff; 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 #chat-container {
-    max-width: 600px;
-    margin: 30px auto; /* Center the chat container */
+    max-width: 600px;  
+    margin: 30px auto; 
     padding: 20px;
     background-color: #211c61;
-}
+} 
 
 h1 {
     font-weight: bold;
@@ -19,32 +19,42 @@ h1 {
     font-style: oblique;
     text-decoration-color: bisque;
     color: #ffffff;
-    text-align: center; /* Center the title */
+    text-align: center; 
+}
+p{
+    color:white;
+    text-align: center;
+    justify-content: center;
+    padding:2px;
 }
 
 #chat-messages {
-    height: 300px;
-    overflow-y: scroll;
+    height: 150px;
+    overflow-y : scroll;
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
 }
 
 #message-input {
-    width: calc(100% - 20px); /* Adjusted width for smaller screens */
+    width: calc(100% - 20px); 
     padding: 8px;
     margin-bottom: 10px;
 }
 
+#date {
+    display: none;
+  }
+
 button {
-    width: 100%; /* Make the button full width */
+    width: 100%; 
     padding: 8px;
     background-color: #4caf50;
     color: #ffffff;
-    border: none;
+    
     cursor: pointer;
 }
 
-/* Media query for smaller screens */
+
 @media only screen and (max-width: 600px) {
     #chat-container {
         width: 90%;
